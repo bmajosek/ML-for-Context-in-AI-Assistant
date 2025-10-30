@@ -25,7 +25,7 @@ This project implements and evaluates a lightweight code search engine based on 
 ### Part 3: Fine-Tuning
 
 - Fine-tunes the model on the CoSQA training split
-- Uses **cross-entropy loss** with in-batch negatives
+- Uses **triplet margin loss** / **cross-entropy loss with in-batch negatives** to optimize embedding representations for retrieval.
 - Demonstrates metric improvements on the test set after fine-tuning
 - Includes a training loss plot to visualize convergence
 
