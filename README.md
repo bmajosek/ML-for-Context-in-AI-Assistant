@@ -135,7 +135,7 @@ rag_jb/
 - **Model:** `sentence-transformers/all-MiniLM-L6-v2`
 - **Vector store:** Qdrant
 - **Loss:** Cross-entropy with in-batch negatives  
-- **Dataset:** [CoSQA](https://github.com/wasiahmad/CoSQA) — around 20k query-function pairs
+- **Dataset:** [CoSQA](https://github.com/wasiahmad/CoSQA) - around 20k query-function pairs
 
 **Metrics explained:**
 - *Recall@10*: Did the relevant code appear in the top 10?
@@ -154,7 +154,7 @@ This repository includes:
 
 ## Loss Function (Triplet Margin)
 
-For fine-tuning, we use **triplet margin loss with hard negatives**. This means for each query, the model learns to bring the correct code close and push the hardest mistake (most similar wrong code in the batch) further away. This works well for retrieval because it shapes the embedding space for ranking—exactly what Recall, MRR, and NDCG need.
+For fine-tuning, we use **triplet margin loss with hard negatives**. This means for each query, the model learns to bring the correct code close and push the hardest mistake (most similar wrong code in the batch) further away. This works well for retrieval because it shapes the embedding space for ranking-exactly what Recall, MRR, and NDCG need.
 
 - You can change the loss to cross-entropy in `config.py` if you want a basic in-batch negative scheme (also robust and commonly used).
 - Loss curves for training and validation (average per epoch) are saved as `training_loss.png` for full transparency.
