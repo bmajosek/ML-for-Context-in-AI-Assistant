@@ -151,3 +151,13 @@ This repository includes:
 - A clear project structure with documented scripts  
 - A `report.ipynb` notebook showing results and plots  
 - Working scripts that reproduce results end-to-end
+
+## Loss Function (Triplet Margin)
+
+For fine-tuning, we use **triplet margin loss with hard negatives**. This means for each query, the model learns to bring the correct code close and push the hardest mistake (most similar wrong code in the batch) further away. This works well for retrieval because it shapes the embedding space for ranking—exactly what Recall, MRR, and NDCG need.
+
+- You can change the loss to cross-entropy in `config.py` if you want a basic in-batch negative scheme (also robust and commonly used).
+- Loss curves for training and validation (average per epoch) are saved as `training_loss.png` for full transparency.
+
+---
+

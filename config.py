@@ -1,10 +1,12 @@
 MODEL_NAME = 'sentence-transformers/all-MiniLM-L6-v2'
 
 LEARNING_RATE = 2e-5
-BATCH_SIZE = 16
-EPOCHS = 3
+BATCH_SIZE = 32
+EPOCHS = 10
 
-MAX_TRAIN_SAMPLES = 5000
+LOSS_FUNCTION = 'triplet'  # 'triplet' or 'cross_entropy'
+
+MAX_TRAIN_SAMPLES = 20000
 MAX_VAL_SAMPLES = 500
 
 OUTPUT_DIR = './fine_tuned_model'
